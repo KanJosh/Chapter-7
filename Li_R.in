@@ -1,0 +1,41 @@
+&CONTROL
+    calculation = 'relax',
+    verbosity = 'high'
+    prefix = 'Li_R.in' 
+    outdir='./outdir'   
+    tstress = .True.
+    tprnfor = .True.
+    etot_conv_thr = 1.0D-4
+    forc_conv_thr = 1.0D-3
+    pseudo_dir = '/home/jk7877/qe_potentials'
+ /
+ &SYSTEM
+    ibrav = 0,
+    nat = 1, 
+    ntyp = 1,
+    ecutwfc = 40.0,
+    ecutrho = 450.0,
+    occupations = 'smearing',
+    smearing = 'marzari-vanderbilt',
+    degauss = 0.02
+ /
+ &ELECTRONS
+    mixing_beta = 0.7
+    electron_maxstep = 100
+ /
+ &IONS
+ /
+
+ATOMIC_SPECIES
+Li        6.94100         Li.pbe-sl-kjpaw_psl.1.0.0.UPF
+
+ATOMIC_POSITIONS (angstrom)
+Li      0.0000000      0.0000000     0.00000000                 
+                 
+K_POINTS (automatic)
+ 16 16 16 1 1 1
+
+CELL_PARAMETERS angstrom
+      3.0546235100       0.0000000000       0.0000000000
+      1.5273117550       2.6453815587       0.0000000000
+      1.5273117550       0.8817938529       2.4940896519
